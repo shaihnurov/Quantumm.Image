@@ -7,7 +7,7 @@ using System.IO;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace Quantumm.Image.Services.ImageCache
+namespace Quantumm.Image.Services.Cache
 {
     /// <summary>
     /// Image caching service using an LRU (Least Recently Used) policy and asynchronous loading.

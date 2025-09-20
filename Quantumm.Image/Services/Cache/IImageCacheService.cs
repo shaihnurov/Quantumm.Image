@@ -1,7 +1,7 @@
 ﻿using Avalonia.Media.Imaging;
 using System.Threading.Tasks;
 
-namespace Quantumm.Image.Services.ImageCache
+namespace Quantumm.Image.Services.Cache
 {
     /// <summary>
     /// Interface for an image caching service.

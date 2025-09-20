@@ -1,6 +1,6 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
-using Quantumm.Image.Services.ImageCache;
+using Quantumm.Image.Services.Cache;
 
 namespace Quantumm.Image.Services.DependencyInjection
 {
