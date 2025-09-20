@@ -19,13 +19,13 @@ jobs:
           dotnet-version: '9.0.x'
 
       - name: Restore dependencies
-        run: dotnet restore
-
+        run: dotnet restore Quantumm.Image/Quantumm.Image.csproj
+      
       - name: Build
-        run: dotnet build -c Release --no-restore
-
+        run: dotnet build Quantumm.Image/Quantumm.Image.csproj -c Release --no-restore
+      
       - name: Pack NuGet package
-        run: dotnet pack -c Release --no-build -o ./artifacts
+        run: dotnet pack Quantumm.Image/Quantumm.Image.csproj -c Release --no-build -o ./artifacts
 
       - name: Publish to NuGet
         run: dotnet nuget push ./artifacts/*.nupkg --api-key ${{ secrets.NUGET_API_KEY }} --source https://api.nuget.org/v3/index.json
