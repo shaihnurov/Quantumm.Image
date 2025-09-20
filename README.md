@@ -81,7 +81,7 @@ Updates an existing image in the cache by loading a new version from disk. Adds 
  - .NET 9.0
 
 ## License
-MIT License. See [LICENSE](LICENSE) for details.
+MIT License. See [LICENSE](LICENSE.txt) for details.
 
 ## Contributors
 
