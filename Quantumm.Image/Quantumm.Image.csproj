@@ -5,14 +5,22 @@
     <Nullable>enable</Nullable>
 		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
 		<PackageId>Quantumm.Image</PackageId>
-		<Version>1.1.4</Version>
+		<Version>1.1.5</Version>
 		<Authors>shaihnurov</Authors>
 		<Company>shaihnurov</Company>
 		<Description>An asynchronous, LRU-aware image caching and loading service for Avalonia applications.</Description>
+		<PackageProjectUrl>https://github.com/shaihnurov/Quantumm.Image</PackageProjectUrl>
+		<RepositoryUrl>https://github.com/shaihnurov/Quantumm.Image</RepositoryUrl>
+		<PackageLicenseExpression>MIT</PackageLicenseExpression>
+		<PackageIcon>Assets/logo.png</PackageIcon>
 	</PropertyGroup>
 
-  <ItemGroup>
-    <PackageReference Include="Avalonia" Version="11.3.6" />
-    <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="9.0.9" />
-  </ItemGroup>
+	<ItemGroup>
+		<PackageReference Include="Avalonia" Version="11.3.6" />
+		<PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="9.0.9" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<None Include="Assets/logo.png" Pack="true" PackagePath="" />
+	</ItemGroup>
 </Project>
