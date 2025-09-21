@@ -2,7 +2,7 @@
 
 [![NuGet](https://img.shields.io/nuget/v/Quantumm.Image.svg)](https://www.nuget.org/packages/Quantumm.Image)  
 
-**Quantumm.Image** is an asynchronous, thread-safe, LRU-aware image caching library designed for **Avalonia** applications. It provides fast and memory-efficient image loading with support for dependency injection and duplicate download prevention.  
+**Quantumm.Image** is an asynchronous, thread-safe, LRU-aware image caching and downloading library designed for Avalonia applications. It provides fast and memory-efficient image loading and downloading with support for dependency injection and duplicate download prevention.
 
 ---
 
