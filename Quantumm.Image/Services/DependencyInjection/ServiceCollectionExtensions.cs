@@ -1,6 +1,7 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Quantumm.Image.Services.Cache;
+using Quantumm.Image.Services.Downloader;
 
 namespace Quantumm.Image.Services.DependencyInjection
 {
@@ -13,9 +14,16 @@ namespace Quantumm.Image.Services.DependencyInjection
         {
             services.AddSingleton<IImageCacheService>(sp =>
             {
-                var logger = sp.GetService<ILogger<ImageCacheService>>()!;
+                var logger = sp.GetService<ILogger<ImageCacheService>>();
                 return new ImageCacheService(logger, capacity);
             });
+
+            return services;
+        }
+
+        public static IServiceCollection AddImageDownloader(this IServiceCollection services)
+        {
+            services.AddHttpClient<IImageDownloadService, ImageDownloadService>();
 
             return services;
         }

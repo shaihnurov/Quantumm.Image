@@ -1,4 +1,6 @@
 ﻿using Avalonia.Media.Imaging;
+using System;
+using System.IO;
 using System.Threading.Tasks;
 
 namespace Quantumm.Image.Services.Cache

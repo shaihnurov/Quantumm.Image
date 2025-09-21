@@ -18,7 +18,7 @@ namespace Quantumm.Image.Services.Cache
     /// </summary>
     /// <param name="logger">Logger instance for diagnostics.</param>
     /// <param name="capacity">Maximum number of images in cache (default 100).</param>
-    public class ImageCacheService(ILogger<ImageCacheService> logger, int capacity = 100) : IImageCacheService
+    public class ImageCacheService(ILogger<ImageCacheService>? logger, int capacity = 100) : IImageCacheService
     {
 
         /// <summary>
@@ -91,7 +91,7 @@ namespace Quantumm.Image.Services.Cache
                     if (!File.Exists(path))
                         throw new FileNotFoundException($"Image file not found: {path}");
 
-                    logger.LogDebug("Loading image {Path} from disk", path);
+                    logger?.LogDebug("Loading image {Path} from disk", path);
                     return new Bitmap(path);
                 }));
 
@@ -135,11 +135,11 @@ namespace Quantumm.Image.Services.Cache
                             try
                             {
                                 oldBitmap.Dispose();
-                                logger.LogDebug("Evicted least recently used image {Path} from cache", oldestKey);
+                                logger?.LogDebug("Evicted least recently used image {Path} from cache", oldestKey);
                             }
                             catch (Exception ex)
                             {
-                                logger.LogWarning(ex, "Error disposing old image {Path}", oldestKey);
+                                logger?.LogWarning(ex, "Error disposing old image {Path}", oldestKey);
                             }
                         }
                     }
@@ -154,7 +154,7 @@ namespace Quantumm.Image.Services.Cache
             catch (Exception ex) when (ex is not OutOfMemoryException and not StackOverflowException)
             {
                 _loadingTasks.TryRemove(path, out _);
-                logger.LogError(ex, "Error loading image {Path}", path);
+                logger?.LogError(ex, "Error loading image {Path}", path);
                 throw;
             }
         }
@@ -189,11 +189,11 @@ namespace Quantumm.Image.Services.Cache
                         try
                         {
                             oldBitmap.Dispose();
-                            logger.LogDebug("Updated image {Path} in cache", path);
+                            logger?.LogDebug("Updated image {Path} in cache", path);
                         }
                         catch (Exception ex)
                         {
-                            logger.LogWarning(ex, "Error disposing old image {Path}", path);
+                            logger?.LogWarning(ex, "Error disposing old image {Path}", path);
                         }
                     }
 
@@ -216,7 +216,7 @@ namespace Quantumm.Image.Services.Cache
             }
             catch (Exception ex)
             {
-                logger.LogError(ex, "Error updating image {Path}", path);
+                logger?.LogError(ex, "Error updating image {Path}", path);
                 throw;
             }
         }
